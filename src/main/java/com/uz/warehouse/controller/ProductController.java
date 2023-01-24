@@ -29,14 +29,14 @@ public class ProductController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    public Products create(@RequestBody ProductsDto productsDto) {
+    public Products create(@RequestBody ProductsDto productsDto) throws Exception {
         return service.create(productsDto);
 
     }
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public Products update(@PathVariable Integer id, @RequestBody ProductsDto dto) {
+    public Products update(@PathVariable Integer id, @RequestBody ProductsDto dto) throws Exception {
         return service.update(id, dto);
     }
 
